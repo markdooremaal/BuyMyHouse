@@ -26,11 +26,4 @@ public class MortgageController : ControllerBase
         
         return Ok(mortgage);
     }
-
-    [HttpDelete("DeleteMortgage")]
-    public async Task<IActionResult> DeleteMortgage(int id)
-    {
-        return NotFound("Mortgage offer does not exist");
-    }
-
 }

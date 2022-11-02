@@ -18,9 +18,4 @@ public class MortgageService : IMortgageService
     {
         return await _buyMyHouseContext.Set<Mortgage>().FirstOrDefaultAsync(x => x.MortgageId == id);
     }
-    
-    public async Task DeleteAll()
-    {
-        await _buyMyHouseContext.Database.ExecuteSqlRawAsync("TRUNCATE TABLE Mortgages");
-    }
 }
