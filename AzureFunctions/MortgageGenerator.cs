@@ -19,9 +19,9 @@ public class MortgageGenerator
         _userService = userService;
     }
 
-    // should be 0 0 * * * -- For testing set at every 15 seconds
+    // */15 * * * * * --> For testing set at every 15 seconds
     [FunctionName("MortgageGenerator")]
-    public async Task RunAsync([TimerTrigger("*/15 * * * * *")] TimerInfo myTimer, ILogger log)
+    public async Task RunAsync([TimerTrigger("0 0 * * *")] TimerInfo myTimer, ILogger log)
     {
         log.LogInformation("[Started] generate mortgage function at: {UtcNow}", DateTime.UtcNow);
 
